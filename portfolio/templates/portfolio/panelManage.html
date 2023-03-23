@@ -1,0 +1,67 @@
+{% extends "portfolio/panelLayout.html" %}
+
+{% block title %}Control Panel{% endblock %}
+
+{% block body %}
+
+<h2>Manage Posts</h2>
+<table id="manageposts">
+
+    <tr>
+        {% if type == 'gallery' %}
+        <th>Image</th>
+        {% endif %}
+        <th>Title</th>
+        <th>Tags</th>
+        <th>Date</th>
+        <th>Status</th>
+        <th></th>
+    </tr>
+    {% for item in posts %}
+    <tr>
+        {% if type == 'gallery' %}
+        <td class="imgcell">
+            <a href="{% url 'gallery' item.id %}" title="{{item.title}}">
+                <img src="{{item.image}}" class="manageimg" alt="{{item.title}}">
+            </a>
+        </td>
+        {% endif %}
+
+        <td><a href="
+            {% if type == 'blog' %}
+            
+            {% url 'blog' item.id %}
+
+            {% elif type == 'gallery' %}
+            
+            {% url 'gallery' item.id %}
+
+            {% endif %}
+            
+            " alt="">{{item.title}}</a></td>
+
+        <td class="tags">
+            {% for tag in item.tags %}
+            <a href="" alt="">{{tag.tag}}</a>{% if not forloop.last %},
+            {% endif %}
+            {% endfor %}
+        </td>
+        <td>{{item.date}}</td>
+        <td>{{item.status}}</td>
+        <td><a href="" alt="">Edit</a> <a href="" alt="">Delete</a></td>
+    </tr>
+    {% endfor %}
+    {% if type == "gallery" %}
+
+
+    {% elif type == "blog" %}
+
+
+    {% elif type == "article" %}
+
+
+    {% elif type == "hero" %}
+
+    {% endif %}
+</table>
+{% endblock %}

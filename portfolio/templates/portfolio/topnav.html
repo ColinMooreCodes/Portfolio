@@ -1,0 +1,16 @@
+{% load static %}
+
+<nav id="topnav">
+    <div class="bg"></div>
+    <div class="menutoggle"><button class="toggle" aria-controls="primary-menu" aria-expanded="false">Menu</button></div>
+    <div class="navmenu navupper">
+        <a href="{% url 'index' %}" alt="Home"><img src="{% static 'portfolio/images/home.png' %}" alt="Home" id="homebutton"></a>
+        <a href="{% url 'blog' %}" alt="Blog" id="blogbutton"><img src="{% static 'portfolio/images/blog.png' %}" alt="blog"></a>
+        <a href="" alt="Gallery" id="gallerybutton"><img src="{% static 'portfolio/images/gallery.png' %}" alt="gallery"></a>
+    </div>
+    <div class="navmenu navlower">
+        <a href="" alt="About" id="aboutbutton"><img src="{% static 'portfolio/images/about.png' %}" alt="about"></a>
+        <a href="" alt="Contact" id="contactbutton"><img src="{% static 'portfolio/images/contact.png' %}" alt="contact"></a>
+        <a href="" alt="Shop" class="shop" id="shopbutton"><img src="{% static 'portfolio/images/shop.png' %}" alt="shop"></a>
+    </div>
+</nav>

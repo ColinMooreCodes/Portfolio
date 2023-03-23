@@ -1,0 +1,34 @@
+Base code:
+- Fix  date to current time zone
+- Hover for manage images
+- File manager
+- Edit posts
+- Delete Posts
+- Settings on panel
+- What to do for dashboard
+- Link to homepage
+- If logged in show controls on home pages
+- Ability to edit/add to sidebar content
+- Image display
+- Footer details, edit footer content
+- Hero secton
+- Articles
+- Button for articles
+- Blog/gallery/article views
+- About page
+- Contact page
+- Shops page
+- Ability to edit about, contact, shops content
+- Archive list
+- By date views
+- Home layout (smaller for larger views)
+
+For website:
+- Installer
+- Set up DBs
+
+Minor details:
+- Make edit and delete more clear
+- Improve dashboard style
+- Clicking on nav buttons makes whole role move
+- Accessiblity, especially on nav buttons (ARIA)

@@ -1,0 +1,60 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/375d969cd5.js" crossorigin="anonymous"></script>
+    <link href="{% static 'portfolio/styles.css' %}" rel="stylesheet">
+    <link href="{% static 'portfolio/lightbox.css' %}" rel="stylesheet">
+    <title>Undead Orion :: {% block title %}{% endblock %}</title>
+</head>
+
+<body>
+    <div id="logo">
+        <a href="{% url 'index' %}" alt="Home"><img src="{% static 'portfolio/images/logo.png' %}" alt="Logo"></a>
+    </div>
+    {% include "portfolio/topnav.html" %}
+
+
+    <div class="container">
+        <div id="wrap">
+            <main>
+                {% block body %}
+                {% endblock %}
+            </main>
+            <!-- About -->
+            <aside class="about">
+                <header class="postheader aboutheader">
+                    <div class="iconbox">✰</div>
+                    <h2 class="entrytitle">About</h2>
+                </header>
+                <div class="aboutimg"></div>
+                <div class="abouticons">Social icons here</div>
+                <div class="abouttext">
+                    <h4>Orion | Artist</h4>
+                    <p>Stuff goes here</p>
+                </div>
+            </aside>
+        </div> <!-- wrap -->
+        {% include "portfolio/footer.html" %}
+    </div> <!-- container -->
+
+
+    <div id="lightbox" class="hide">
+        <div id="lighboxinner">
+            <div id="imgdisplay">
+                <div id="lightboxclose">
+                    <a id="lightboxcloselink" href="javascript:void(0);">X</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'portfolio/js.js' %}"></script>
+</body>
+
+</html>

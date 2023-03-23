@@ -1,0 +1,30 @@
+<div class="pagination">
+    <div class="prevarrows">
+        {% if page_obj.has_previous and page_obj.previous_page_number != 1 %}
+        <a href="?page=1"><i class="fa-solid fa-angles-left"></i></a>
+        {% else %}
+        <i class="fa-solid fa-angles-left nolink"></i>
+        {% endif %}
+        {% if page_obj.has_previous %}
+        <a href="?page={{ page_obj.previous_page_number }}"><i class="fa-solid fa-angle-left"></i></a>
+        {% else %}
+        <i class="fa-solid fa-angle-left nolink"></i>
+        {% endif %}
+    </div>
+    <div class="currpage">
+        {{page_obj.number}} of {{page_obj.paginator.num_pages}}
+    </div>
+    <div class="nextarrows">
+        {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}"><i class="fa-solid fa-angle-right"></i></a>
+        {% else %}
+        <i class="fa-solid fa-angle-right nolink"></i>
+        {% endif %}
+        {% if page_obj.has_next and page_obj.next_page_number != page_obj.paginator.num_pages %}
+        <a href="?page={{ page_obj.paginator.num_pages}}"><i class="fa-solid fa-angles-right"></i></a>
+        {% else %}
+        <i class="fa-solid fa-angles-right nolink"></i>
+        {% endif %}
+
+    </div>
+</div>

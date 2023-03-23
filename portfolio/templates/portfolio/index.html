@@ -1,0 +1,52 @@
+{% extends "portfolio/layout.html" %}
+
+{% block title %}Home{% endblock %}
+
+
+
+{% block body %}
+
+
+
+<!-- Hero section here -->
+
+
+<!-- Blog Posts -->
+
+{% for post in blogPosts %}
+<article class="blogpost frontpage post">
+    <header class="postheader blogheader">
+        <div class="iconbox">✰</div>
+        <h2 class="entrytitle">
+            <a href="{% url 'blogpost' post.id%}">{{post.title}}</a>
+        </h2>
+    </header>
+    <div class="posttags">
+        {% for tag in post.tags %}
+        <a href="">{{tag.tag}}</a>
+        {% endfor %}
+    </div>
+    <div class="postdate">Posted on <a href="">{{post.date}}</a></div>
+    <div class="postbody">
+        {{post.body}}
+    </div>
+
+    <div class="postfoot">
+        <a href="">1 comment</a>
+        <a href="">Edit</a>
+    </div>
+</article>
+{% endfor %}
+
+<!-- Gallery Posts -->
+
+{% for post in artPosts %}
+<a href="{% url 'gallerypost' post.id%}" class="frontpage"><img src="{{post.thumb}}"></a>
+{% endfor %}
+
+<!-- Articles -->
+
+
+
+
+{% endblock %}

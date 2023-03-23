@@ -1,0 +1,56 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'portfolio/panelstyle.css' %}" rel="stylesheet">
+    <title>UO Control Panel :: {% block title %}{% endblock %}</title>
+</head>
+
+<body>
+    <div class="wrap">
+        {% if user.is_authenticated %}
+        <nav class="fullwidth">
+
+            <a href="{% url 'panel' %}">Dashboard</a>
+
+            <a href="">Settings</a>
+            <div id="newposts" class="dropdown">
+                <a class="dropbutton">New Post ▾</a>
+
+                <div id="newpost" class="dropdowncontent hidden">
+                    <a href="{% url 'new' 'gallery' %}">Gallery</a>
+                    <a href="{% url 'new' 'blog' %}">Blog</a>
+                    <a href="{% url 'new' 'article' %}">Article</a>
+                    <a href="{% url 'new' 'hero' %}">Hero</a>
+                </div>
+            </div>
+            <div id="managedrop" class="dropdown">
+                <a class="dropbutton">Manage ▾</a>
+                <div id="manage" class="dropdowncontent hidden">
+                    <a href="{% url 'manage' 'gallery' %}">Gallery Posts</a>
+                    <a href="{% url 'manage' 'blog' %}">Blog Posts</a>
+                    <a href="{% url 'manage' 'article' %}">Articles</a>
+                    <a href="{% url 'manage' 'hero' %}">Heroes</a>
+                </div>
+            </div>
+
+            <div class="spacer"></div>
+            <a href="{% url 'logout' %}">LogOut</a>
+        </nav>
+        {% endif %}
+        <main>
+            {% block body %}
+            {% endblock %}
+        </main>
+    </div>
+
+    <script src="{% static 'portfolio/panel.js' %}"></script>
+</body>
+
+
+</html>
