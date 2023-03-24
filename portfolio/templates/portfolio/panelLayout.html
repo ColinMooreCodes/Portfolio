@@ -22,7 +22,7 @@
             <div id="newposts" class="dropdown">
                 <a class="dropbutton">New Post ▾</a>
 
-                <div id="newpost" class="dropdowncontent hidden">
+                <div id="newpost" class="dropdowncontent hide">
                     <a href="{% url 'new' 'gallery' %}">Gallery</a>
                     <a href="{% url 'new' 'blog' %}">Blog</a>
                     <a href="{% url 'new' 'article' %}">Article</a>
@@ -31,7 +31,7 @@
             </div>
             <div id="managedrop" class="dropdown">
                 <a class="dropbutton">Manage ▾</a>
-                <div id="manage" class="dropdowncontent hidden">
+                <div id="manage" class="dropdowncontent hide">
                     <a href="{% url 'manage' 'gallery' %}">Gallery Posts</a>
                     <a href="{% url 'manage' 'blog' %}">Blog Posts</a>
                     <a href="{% url 'manage' 'article' %}">Articles</a>

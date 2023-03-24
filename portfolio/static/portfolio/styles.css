@@ -230,6 +230,8 @@ LAYOUT PARTS
 		display: grid;
 		grid-template-columns: 1.5fr 2.5fr;
 		column-gap: 10px;
+		width: 900px;
+		margin: 0 auto;
 	}
 	
 	.footer1 {
@@ -602,7 +604,7 @@ MISC BITS
 =================================================
 */
 
-.hidden {
+.hide {
 	display: none;
 }
 
